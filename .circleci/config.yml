@@ -38,9 +38,15 @@ jobs:
     docker:
       - image: ornladios/adios2-auto:fedora-openmpi-ubsan
 
+  "fedora-asan":
+    <<: *defaults
+    docker:
+      - image: kylefromkitware/adios2-auto:fedora-asan
+
 workflows:
   version: 2
   build:
     jobs:
       - "fedora-ubsan"
       - "fedora-openmpi-ubsan"
+      - "fedora-asan"
