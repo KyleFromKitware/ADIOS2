@@ -43,6 +43,11 @@ jobs:
     docker:
       - image: kylefromkitware/adios2-auto:fedora-asan
 
+  "fedora-msan":
+    <<: *defaults
+    docker:
+      - image: kylefromkitware/adios2-auto:fedora-msan
+
 workflows:
   version: 2
   build:
@@ -50,3 +55,4 @@ workflows:
       - "fedora-ubsan"
       - "fedora-openmpi-ubsan"
       - "fedora-asan"
+      - "fedora-msan"
